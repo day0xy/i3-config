@@ -185,3 +185,47 @@ open qt5ct with rofi
 you can change icon theme through the GUI 
 
 ![](screenshots/Screenshot_20221207_170847.png)
+
+### 5.touchpad
+
+#### 
+
+```
+yay -S xf86-input-synaptics
+```
+
+```
+sudoedit /etc/X11/xorg.conf.d/70-synaptics.conf
+```
+
+
+
+```
+Section "InputClass"
+        Identifier "touchpad catchall"
+        Driver "synaptics"
+        MatchIsTouchpad "on"
+
+        Option "TapButton1" "1"            #单指敲击产生左键事件
+        Option "TapButton2" "3"            #双指敲击产生中键事件
+
+        Option "VertEdgeScroll" "on"       #滚动操作：横向、纵向、环形
+        Option "VertTwoFingerScroll" "on"
+        Option "VertScrollDelta"          "-111"	#natural scrolling
+        Option "HorizScrollDelta"         "-111"
+        Option "HorizEdgeScroll" "on"		
+        Option "HorizTwoFingerScroll" "on"
+        Option "CircularScrolling" "on"  
+        Option "CircScrollTrigger" "2"
+
+        Option "EmulateTwoFingerMinZ" "40" #精确度
+        Option "EmulateTwoFingerMinW" "8"
+        Option "CoastingSpeed" "20"        #触发快速滚动的滚动速度
+
+        Option "PalmDetect" "1"            #避免手掌触发触摸板
+        Option "PalmMinWidth" "3"          #认定为手掌的最小宽度
+        Option "PalmMinZ" "200"            #认定为手掌的最小压力值
+EndSection
+
+```
+
