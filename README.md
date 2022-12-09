@@ -62,7 +62,9 @@ yay -S polkit-kde-agent  ark
 
 ## Screenshot
 
-![](screenshots/Screenshot_20221209_120025.png)
+![](screenshots/Screenshot_20221209_122553.png)
+
+
 
 ![](screenshots/Screenshot_20221209_120219.png)
 
