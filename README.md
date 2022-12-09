@@ -24,28 +24,6 @@ with round  corners and terminal blur,screenshots are following
 
 
 
-softwares you should install(if ArchLinuxuser):
-
-i prefer `yay`:
-
-```
-yay -S i3-gaps picom breeze-icons ark nerd-fonts-complete 
-
-yay -S termite feh rofi ranger ueberzug dolphin  polybar twmn-git xidlehook
-
-yay -S betterlockscreen networkmanager-dmenu-git  imagemagick  xfce4-power-manager xfce4-clipman-plugin
-
-yay -S xfce-polkit-git or   	polkit-kde-agent   qt5ct   ark
-
-for fcitx5:
-
-yay -S  fcitx5-im     fcitx5-chinese-addons fcitx5-pinyin-moegirl  fcitx5-pinyin-zhwiki
-```
-
-check .config/i3/config to see  what you also need to install
-
-
-
 
 
 ## Install
@@ -62,21 +40,31 @@ copy `content` of `picom.conf` to `/etc/xdg/picom.conf`
 
 
 
+
+
+## Softwares
+
+for archlinux user
+
+```
+yay -S i3-gaps picom breeze-icons lxappearance-gtk3 qt5ct nerd-fonts-complete
+
+yay -S termite feh rofi ranger ueberzug dolphin  polybar twmn-git xidlehook
+
+yay -S betterlockscreen networkmanager-dmenu-git  imagemagick  xfce4-power-manager xfce4-clipman-plugin
+
+yay -S polkit-kde-agent  ark
+```
+
+
+
+
+
 ## Screenshot
 
-![](screenshots/Screenshot_20221206_135621.png)
+![](screenshots/Screenshot_20221209_120025.png)
 
-
-
-![](screenshots/Screenshot_20221206_135632.png)
-
-
-
-bar:
-
-![](screenshots/Screenshot_20221206_135514.png)
-
-is it really simple?
+![](screenshots/Screenshot_20221209_120219.png)
 
 ## Shortcuts
 
@@ -229,3 +217,26 @@ EndSection
 
 ```
 
+### 6.systemtray icon
+
+1.install `lxappearance-gtk3` and `qt5ct`
+
+
+
+2.download your icon the to `~/.icons/`
+
+
+
+3.open the two programs to set
+
+
+
+4.set icon size
+
+edit polybar/config   
+
+```
+tray-maxsize = 22
+```
+
+ 

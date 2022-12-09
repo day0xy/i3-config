@@ -47,27 +47,24 @@ border-size = 0
 border-color = #00000000
 
 padding-left = 0
-padding-right = 4
+padding-right = 1
 
 module-margin-left = 1
-module-margin-right = 2
+module-margin-right = 1
 
-; font-0 = fixed:pixelsize=10;1
-; font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-; font-2 = siji:pixelsize=10;1
-font-0 = "Dejavu:pixelsize=10;0"
-font-1 = "Roboto:size=11:weight=bold;2"
-font-2 = "Noto Sans CJK SC:size=11;1"
-font-3 = "Font Awesome 5 Free:style=Regular:pixelsize=8;1"
-font-4 = "Font Awesome 5 Free:style=Solid:pixelsize=8;1"
-font-5 = "Font Awesome 5 Brands:pixelsize=8;1"
+
+font-0 = JetBrainsMono Nerd Font:size=10;0
+font-1 = JetBrainsMono Nerd Font:size=10;0
+font-2 = JetBrainsMono Nerd Font:size=10;0
 
 modules-left = i3 xwindow
-modules-right = pulseaudio mic-volume  battery memory cpu  date
+modules-center= date
+modules-right = pulseaudio mic-volume   memory cpu  battery 
 
 tray-position = right
-tray-padding = 2
+tray-padding = 1
 tray-background = #000000
+tray-maxsize = 22
 
 wm-restack = i3
 
@@ -118,7 +115,7 @@ wrapping-scroll = false
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
-label-mode-padding = 2
+label-mode-padding = 1
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
@@ -126,11 +123,11 @@ label-mode-background = ${colors.primary}
 label-focused = %name%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
-label-focused-padding = 2
+label-focused-padding = 1
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %name%
-label-unfocused-padding = 2
+label-unfocused-padding = 1
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %name%
@@ -141,25 +138,23 @@ label-visible-padding = ${self.label-focused-padding}
 ; urgent = Workspace with urgency hint set
 label-urgent = %name%
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = 1
 
 
 
 [module/cpu]
 type = internal/cpu
-interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
-label = CPU: %percentage:2%%
+interval = 1
+format-prefix = " "
+format-prefix-foreground = ${colors.primary}
+label = %percentage:2%%
 
 [module/memory]
 type = internal/memory
-interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #ffffff
-label = Memory: %percentage_used%%
+interval = 1
+format-prefix = " "
+format-prefix-foreground = ${colors.red}
+label = %percentage_used:2%%
 
 [module/wlan]
 type = internal/network
@@ -184,64 +179,59 @@ time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
 
 label = %date% %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
-
-format-volume = <label-volume> 
-label-volume = VOL: %percentage%%
-label-volume-foreground = ${root.foreground}
-
-label-muted =  muted
-
-label-muted-foreground = #666
-
-bar-volume-width = 10
-bar-volume-gradient = false
-bar-volume-indicator-font = 2
-bar-volume-fill-font = 2
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
-
+format-volume-prefix = "  "
+format-volume-prefix-foreground = ${colors.magenta}
+format-volume = <label-volume>
+label-volume = %percentage%%
+label-muted = ﱝ
+label-muted-foreground = ${colors.disabled}
 
 [module/battery]
 type = internal/battery
+full-at = 99
+low-at = 10
 battery = BAT0
 adapter = AC
-full-at = 100
-label-charging = Charging %percentage%%
-label-full = Fully charged
-label-discharging = Discharging %percentage%%
-format-charging =  <label-charging>
-format-charging-underline = #ffb52a
-
-format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
-
-format-full-prefix-foreground = ${colors.foreground-alt}
-;format-full-underline = ${self.format-charging-underline}
-format-full-underline = #169914
-
-ramp-capacity-foreground = ${colors.foreground-alt}
-
-animation-charging-foreground = ${colors.foreground-alt}
+interval = 1
+format-charging = <animation-charging> <label-charging>
+format-charging-foreground = ${colors.green}
+format-discharging = <ramp-capacity>  <label-discharging>
+label-charging = %percentage%%
+label-discharging = %percentage%%
+label-full =   100%
+label-full-foreground = ${colors.green}
+label-low = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+bar-capacity-width = 10
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
 animation-charging-framerate = 750
-
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
-animation-discharging-foreground = ${colors.foreground-alt}
-animation-discharging-framerate = 750
-
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-3 = 
+animation-discharging-4 = 
+animation-discharging-framerate = 500
+animation-low-0 = !
+animation-low-1 = 
+animation-low-framerate = 200
 
 [module/mic-volume]
 type = custom/script
 interval = 1
-format = MIC: <label>
-format-underline = #EE7942
+format =  <label>
 
 exec = bash ~/.config/polybar/mic-volume/mic-volume.sh show-vol 
 
