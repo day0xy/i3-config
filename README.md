@@ -205,14 +205,6 @@ Section "InputClass"
         Option "HorizTwoFingerScroll" "on"
         Option "CircularScrolling" "on"  
         Option "CircScrollTrigger" "2"
-
-        Option "EmulateTwoFingerMinZ" "40" #精确度
-        Option "EmulateTwoFingerMinW" "8"
-        Option "CoastingSpeed" "20"        #触发快速滚动的滚动速度
-
-        Option "PalmDetect" "1"            #避免手掌触发触摸板
-        Option "PalmMinWidth" "3"          #认定为手掌的最小宽度
-        Option "PalmMinZ" "200"            #认定为手掌的最小压力值
 EndSection
 
 ```

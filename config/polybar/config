@@ -58,11 +58,10 @@ font-1 = JetBrainsMono Nerd Font:size=10;0
 font-2 = JetBrainsMono Nerd Font:size=10;0
 
 modules-left = i3 xwindow
-modules-center= date
-modules-right = pulseaudio mic-volume   memory cpu  battery 
+modules-right = pulseaudio mic-volume   memory cpu  battery date
 
-tray-position = right
-tray-padding = 1
+tray-position = center
+tray-padding = 8
 tray-background = #000000
 tray-maxsize = 22
 
