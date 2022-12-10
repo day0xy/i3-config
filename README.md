@@ -30,9 +30,9 @@ with round  corners and terminal blur,screenshots are following
 
 To install,following the steps:
 
-* move `.*sh` to your $HOME
-* move `config folders` to $HOME/.config/
-* move `.wallpaper and /wallpaper_nsfw` to $HOME
+* move `scripts/.*sh` to your $HOME
+* move `config/folders` to $HOME/.config/
+* move `.wallpaper and .wallpaper_nsfw` to $HOME
 
 and:
 
@@ -47,13 +47,13 @@ copy `content` of `picom.conf` to `/etc/xdg/picom.conf`
 for archlinux user
 
 ```
-yay -S i3-gaps picom breeze-icons lxappearance-gtk3 qt5ct nerd-fonts-complete
+yay -S i3-gaps picom breeze lxappearance-gtk3 qt5ct nerd-fonts-complete
 
 yay -S termite feh rofi ranger ueberzug dolphin  polybar twmn-git xidlehook
 
-yay -S betterlockscreen networkmanager-dmenu-git  imagemagick  xfce4-power-manager xfce4-clipman-plugin
+yay -S betterlockscreen   imagemagick  xfce4-power-manager xfce4-clipman-plugin
 
-yay -S polkit-kde-agent  ark autotiling
+yay -S polkit-kde-agent  ark autotiling flat-remix-gtk
 ```
 
 
@@ -62,19 +62,21 @@ yay -S polkit-kde-agent  ark autotiling
 
 ## Screenshot
 
-![](screenshots/Screenshot_20221209_122553.png)
+![](screenshots/Screenshot_20221210_211141.png
+)
+
+![](screenshots/Screenshot_20221210_211204.png)
 
 
-
-![](screenshots/Screenshot_20221209_120219.png)
 
 ## Shortcuts
 
-| ctrl+$mod+s | SFW mode  |
-| ----------- | --------- |
-| ctrl+$mod+n | NSFW mode |
-| $mod+return | terminal  |
-| alt+e       | dolphin   |
+| ctrl+$mod+s  | SFW mode         |
+| ------------ | ---------------- |
+| ctrl+$mod+n  | NSFW mode        |
+| shift+$mod+c | change wallpaper |
+| $mod+return  | terminal         |
+| alt+e        | dolphin          |
 
 two mode,check wallpaper folders
 
@@ -88,51 +90,18 @@ some problems fix
 yay -S ttf-hack
 ```
 
-### 2.polybar
-
-[miscphone config]
-
-check `.config/polybar/config`
-
-```
-[module/mic-volume]
-type = custom/script
-interval = 1
-format = Mic:<label>
-exec = bash ~/.config/polybar/mic-volume/mic-volume.sh show-vol alsa_input.pci-0000_04_00.6.analog-stereo
-
-; Control actions (using pactl)
-; Example supplying the name of the source
-click-left = bash ~/.config/polybar/mic-volume/mic-volume.sh mute-vol alsa_input.pci-0000_04_00.6.analog-stereo
-; Example supplying the index of the source
-scroll-up = bash ~/.config/polybar/mic-volume/mic-volume.sh inc-vol 
-; Example leaving the MICROPHONE_NAME blank and using the default source
-scroll-down = bash ~/.config/polybar/mic-volume/mic-volume.sh dec-vol 
-```
-
-you can delete `alsa_input.pci-0000_04_00.6.analog-stereo`  to use default 
-
-
-
-or:
-
-```
-pactl list | grep input 
-```
-
-get you device id
-
-```
-Name: alsa_input.pci-0000_04_00.6.analog-stereo
-```
-
 ### 3.dolphin inner terminal
 
 ```
-The default terminal is konsole,but it has white border,now follow steps to change to termite
+vim .config/kdeglobals
 ```
 
-`check` https://wiki.archlinux.org/title/Dolphin#Open_terminal to change it.
+add
+
+```
+[General]
+TerminalApplication=termite
+```
 
 ### 4.dolphin icons 
 
@@ -196,10 +165,10 @@ Section "InputClass"
         Driver "synaptics"
         MatchIsTouchpad "on"
 
-        Option "TapButton1" "1"            #单指敲击产生左键事件
-        Option "TapButton2" "3"            #双指敲击产生中键事件
+        Option "TapButton1" "1"            #tap to click
+        Option "TapButton2" "3"            
 
-        Option "VertEdgeScroll" "on"       #滚动操作：横向、纵向、环形
+        Option "VertEdgeScroll" "on"       
         Option "VertTwoFingerScroll" "on"
         Option "VertScrollDelta"          "-111"	#natural scrolling
         Option "HorizScrollDelta"         "-111"
