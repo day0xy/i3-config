@@ -53,7 +53,7 @@ yay -S termite feh rofi ranger ueberzug dolphin  polybar twmn-git xidlehook
 
 yay -S betterlockscreen networkmanager-dmenu-git  imagemagick  xfce4-power-manager xfce4-clipman-plugin
 
-yay -S polkit-kde-agent  ark
+yay -S polkit-kde-agent  ark autotiling
 ```
 
 

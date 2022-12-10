@@ -31,7 +31,7 @@ alert = #bd2c40
 [bar/mybar]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 27
+height = 25
 ;offset-x = 1%
 ;offset-y = 1%
 ;radius = 6.0
@@ -47,7 +47,7 @@ border-size = 0
 border-color = #00000000
 
 padding-left = 0
-padding-right = 1
+padding-right = 2
 
 module-margin-left = 0
 module-margin-right = 3
@@ -56,7 +56,8 @@ font-0 = Serif:size=12;2
 font-1 = JetBrainsMono Nerd Font:size=11;2
 
 modules-left = i3 xwindow
-modules-right = wlan pulseaudio mic-volume   memory cpu  battery date
+modules-center = date
+modules-right = pulseaudio mic-volume   memory battery 
 
 tray-position = right
 tray-padding = 8
@@ -120,11 +121,11 @@ label-mode-background = ${colors.primary}
 label-focused = %name%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
-label-focused-padding = 1
+label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %name%
-label-unfocused-padding = 1
+label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %name%
@@ -147,10 +148,10 @@ label = %percentage:2%%
 
 [module/memory]
 type = internal/memory
-interval = 1
+interval = 2
 format-prefix = "   "
 format-prefix-foreground = ${colors.red}
-label = %percentage_used:2%%
+label = %gb_used%
 
 [module/wlan]
 type = internal/network
@@ -165,17 +166,17 @@ label-connected =     %netspeed%
 
 [module/date]
 type = internal/date
-interval = 6
+interval = 1
 
-date = " %Y-%m-%d"
-date-alt = " %Y-%m-%d"
+date =       
+date-alt =     %Y-%m-%d
 
 time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix-foreground = ${colors.foreground-alt}
 
-label = %date% %time%
+label = %date%   %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -192,13 +193,13 @@ full-at = 99
 low-at = 10
 battery = BAT0
 adapter = AC
-interval = 1
+interval = 10
 format-charging = <animation-charging>   <label-charging>
 format-charging-foreground = ${colors.green}
 format-discharging = <ramp-capacity>    <label-discharging>
 label-charging = %percentage%%
 label-discharging = %percentage%%
-label-full =     %percentage%%
+label-full =      %percentage%%
 label-full-foreground = ${colors.green}
 label-low =    %percentage%%
 ramp-capacity-0 = 
@@ -227,7 +228,6 @@ animation-low-framerate = 200
 type = custom/script
 interval = 1
 format =    <label>
-
 exec = bash ~/.config/polybar/mic-volume/mic-volume.sh show-vol 
 
 ; Control actions (using pactl)
