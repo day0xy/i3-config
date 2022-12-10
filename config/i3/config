@@ -298,7 +298,6 @@ bindsym $alt+c exec --no-startup-id chromium
 bindsym shift+$alt+c exec --no-startup-id "chromium --incognito"
 bindsym $alt+b exec --no-startup-id firefox
 bindsym shift+$alt+b exec --no-startup-id "firefox --private-window"
-bindsym $alt+m exec --no-startup-id lx-music-desktop
 bindsym $alt+v exec --no-startup-id VirtualBox
 bindsym shift+$alt+v exec --no-startup-id vmware
 
