@@ -53,7 +53,7 @@ bindsym $mod+Shift+q kill
 bindsym $alt+d exec dmenu_run
 
 # rofi support
-bindsym $mod+d exec "rofi -combi-modi window#drun#ssh -theme solarized -font 'Serif 14' -show combi -icon-theme 'Papirus' -show-icons"
+bindsym $mod+d exec "rofi -combi-modi window#drun#ssh -theme Arc-Dark -font 'Serif 14' -show combi -icon-theme 'Papirus' -show-icons"
 bindsym $alt+Tab exec rofi -show window
 bindsym ctrl+$mod+e exec rofi -show emoji
 
