@@ -345,7 +345,7 @@ exec --no-startup-id "xfce4-clipman &"
 #exec --no-startup-id "$HOME/.i3lock-gen-image.sh ~/.wallpaper/ &"
 
 #auto lock screen
-exec --no-startup-id "xidlehook --not-when-audio  --timer 120 '~/.lockscreen.sh' '' &"
+exec --no-startup-id "xidlehook --not-when-audio  --timer 300 '~/.lockscreen.sh' '' &"
 
 # polkit authentication agent
 #exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
